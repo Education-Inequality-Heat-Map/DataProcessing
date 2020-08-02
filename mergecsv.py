@@ -4,12 +4,15 @@
 import pandas as pd
 
 # read the files
-file1 = pd.read_csv('countyStats.csv')
-file2 = pd.read_csv('countyNames.csv')
+#file1 = pd.read_csv('countyStats.csv')
+#file2 = pd.read_csv('countyNames.csv')
+
+file1 = pd.read_csv('cleanedData.csv')
+file2 = pd.read_csv('EducationbyFIPS.csv')
 
 # merge the files
 file3 = pd.merge(file1, file2, on = 'FIPS')
 file3.set_index('FIPS', inplace = True)
 
 # write to a new csv file
-file3.to_csv('merged.csv')
+file3.to_csv('mergedfinalFIPS.csv')
